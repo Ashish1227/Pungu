@@ -1,0 +1,10 @@
+--------Welcome to Address Book---------
+Enter '1' to Add contact
+Enter '2' to Search contact
+Enter '3' to Print contact
+Enter '4' to Edit contact
+Enter '5' to Delete contact
+Enter '0' to Exit
+Do you want to print contacts, add contact, search for contact, edit contact, or delete contact?
+Answer with '1', '2', '3', '4', '5' or '0' to exit application.
+Application terminating...
