@@ -7,25 +7,36 @@ Enter '5' to Delete contact
 Enter '0' to Exit
 Do you want to print contacts, add contact, search for contact, edit contact, or delete contact?
 Answer with '1', '2', '3', '4', '5' or '0' to exit application.
-Do you want to search beased on name or based on phone?
-Give '1' or '2' or anser '0' to return to main menu.
-Give Phone number: 
-Give mobile number: 
-----There is a contact for the Phone number you gave----
-Name: Ashish
-Surname: Gatsy
-Mobile: 56
-Phone: 65
-Email: a@gmail.com
-Street: str2
-Street_Number: 2
-Town: town2
-ZipCode: 50602
+Do you want to edit a contact based on the name or Phone number?
+Give '1', '2' or '0' to return to main menu.
+Give Name: 
+Give Surname: 
+----There is a contact for the information you gave----
+Name: tempa
+Surname: tsura
+Mobile: 887
+Phone: 886
+Email: tca@gmail.com
+Street: tystreet
+Street_Number: 2018
+Town: tctwon
+ZipCode: 20056
 -------------------
-Do you want to search beased on name or based on phone?
-Give '1' or '2' or anser '0' to return to main menu.
-Do you want to search beased on name or based on phone?
-Give '1' or '2' or anser '0' to return to main menu.
+----Edit Information----
+Change the information Name: tempa, to:
+Change the information Surname: tsura, to:
+Change the information Mobile: 887, to:
+Change the information Phone: 886, to:
+Change the information Email: tca@gmail.com, to:
+Change the information Street: tystreet, to:
+Change the information Street_Number: 2018, to:
+Change the information Town: tctwon, to:
+Change the information ZipCode: 20056, to:
+Contact change is completed.
+Do you want to edit a contact based on the name or Phone number?
+Give '1', '2' or '0' to return to main menu.
+Do you want to edit a contact based on the name or Phone number?
+Give '1', '2' or '0' to return to main menu.
 --------Welcome to Address Book---------
 Enter '1' to Add contact
 Enter '2' to Search contact

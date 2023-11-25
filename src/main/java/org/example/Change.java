@@ -9,8 +9,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Change {
-    public static void choose_field() throws FileNotFoundException, IOException {
-        Scanner input = new Scanner(System.in);
+    private static String getNextLine(Scanner scanner) {
+        String line = "";
+        while (line.isEmpty()) {
+            line = scanner.nextLine().trim();
+        }
+        return line;
+    }
+    public static void choose_field(Scanner input) throws FileNotFoundException, IOException {
+//        Scanner input = new Scanner(System.in);
         int exit = 0;
         int answer;
         //we will loop until user wants to exit the application
@@ -23,20 +30,20 @@ public class Change {
                 answer = 0;
             }
             if(answer == 1)
-                name_search();
+                name_search(input);
             else if(answer == 2)
-                number_search();
+                number_search(input);
 
         }while(answer != exit);
     }
 
-    public static void name_search() throws IOException, FileNotFoundException{
-        Scanner input= new Scanner(System.in);
+    public static void name_search(Scanner input) throws IOException, FileNotFoundException{
+//        Scanner input= new Scanner(System.in);
         String f1,f2;
         System.out.println("Give Name: ");
-        f1 = input.nextLine();
+        f1 = getNextLine(input);
         System.out.println("Give Surname: ");
-        f2 = input.nextLine();
+        f2 = getNextLine(input);
         File file = new File(System.getProperty("user.dir")+"/src/contacts.txt");
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String currentLine;
@@ -77,13 +84,13 @@ public class Change {
         System.out.println("-------------------");
         reader.close();
         for(Object str:lines){//for every contatc that i found that is a match
-            info_check(str.toString(), fields);
+            info_check(str.toString(), fields,input);
         }
-        choose_field();
+        choose_field(input);
     }
 
-    public static void number_search() throws IOException, FileNotFoundException{
-        Scanner input= new Scanner(System.in);
+    public static void number_search(Scanner input) throws IOException, FileNotFoundException{
+//        Scanner input= new Scanner(System.in);
         int f1 = -1;
         int f2 = -1;
         boolean valid;
@@ -92,7 +99,7 @@ public class Change {
         do {
             valid = true;
             try {
-                f1 = Integer.parseInt(input.nextLine());
+                f1 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 valid = false;
@@ -102,7 +109,7 @@ public class Change {
         do {
             valid = true;
             try {
-                f2 = Integer.parseInt(input.nextLine());
+                f2 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 valid = false;
@@ -173,14 +180,14 @@ public class Change {
         System.out.println("-------------------");
         reader.close();
         for(Object str:lines){
-            info_check(str.toString(), fields);
+            info_check(str.toString(), fields,input);
         }
-        choose_field();
+        choose_field(input);
     }
 
-    public static void info_check(String line, String[] fields) throws IOException, FileNotFoundException{
+    public static void info_check(String line, String[] fields,Scanner input) throws IOException, FileNotFoundException{
         //in this method user gives the contact's new info
-        Scanner input = new Scanner(System.in);
+//        Scanner input = new Scanner(System.in);
         //File file1 = new File(System.getProperty("user.dir")+"/src/contacts.txt");
         String currentLine1;
         String f1 = "";
@@ -197,15 +204,15 @@ public class Change {
         System.out.println("----Edit Information----");
         String[] info = line.split(",");
         System.out.println("Change the information " + fields[0] +": "+ info[0] + ", to:");
-        f1 = input.nextLine();
+        f1 = getNextLine(input);
         System.out.println("Change the information " + fields[1] +": "+ info[1] + ", to:");
-        f2 = input.nextLine();
+        f2 = getNextLine(input);
         do {
             duplicate = false;
             valid = true;
             System.out.println("Change the information " + fields[2] +": "+ info[2] + ", to:");
             try {
-                f3 = Integer.parseInt(input.nextLine());
+                f3 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 valid = false;
@@ -216,7 +223,7 @@ public class Change {
             valid = true;
             System.out.println("Change the information " + fields[3] +": "+ info[3] + ", to:");
             try {
-                f4 = Integer.parseInt(input.nextLine());
+                f4 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 valid = false;
@@ -225,21 +232,21 @@ public class Change {
         do {
             duplicate = false;
             System.out.println("Change the information " + fields[4] +": "+ info[4] + ", to:");
-            f5 = input.nextLine();
+            f5 = getNextLine(input);
         }while (duplicate == true);
         System.out.println("Change the information " + fields[5] +": "+ info[5] + ", to:");
-        f6 = input.nextLine();
+        f6 = getNextLine(input);
         System.out.println("Change the information " + fields[6] +": "+ info[6] + ", to:");
         try {
-            f7 = Integer.parseInt(input.nextLine());
+            f7 = Integer.parseInt(getNextLine(input));
         } catch (NumberFormatException e) {
             //e.printStackTrace();
         }
         System.out.println("Change the information " + fields[7] +": "+ info[7] + ", to:");
-        f8 = input.nextLine();
+        f8 = getNextLine(input);
         System.out.println("Change the information " + fields[8] +": "+ info[8] + ", to:");
         try {
-            f9 = Integer.parseInt(input.nextLine());
+            f9 = Integer.parseInt(getNextLine(input));
         } catch (NumberFormatException e) {
             //e.printStackTrace();
         }

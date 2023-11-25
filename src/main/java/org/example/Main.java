@@ -127,7 +127,7 @@ public class Main {
                 Print.show_contacts();
                 break;
             case 4:
-                Change.choose_field();
+                Change.choose_field(input);
                 break;
             case 5:
                 Delete.choose_field(input);
