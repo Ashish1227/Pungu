@@ -83,7 +83,6 @@ public class Main {
                 try {
                     answer = getUserInput(input);
                 } catch (InputMismatchException e) {
-                    System.out.println("AERfDHJ");
                     //e.printStackTrace();
                     answer = -1;
                     input.next(); // Consume the invalid input to avoid an infinite loop

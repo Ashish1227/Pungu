@@ -7,4 +7,37 @@ Enter '5' to Delete contact
 Enter '0' to Exit
 Do you want to print contacts, add contact, search for contact, edit contact, or delete contact?
 Answer with '1', '2', '3', '4', '5' or '0' to exit application.
+/home/ashish/IdeaProjects/Pungu/src/contacts.txt
+/home/ashish/IdeaProjects/Pungu/src
+true
+-------------------
+Name: Tejdeep
+Surname: Gutta
+Mobile: 94
+Phone: 49
+Email: t@gmail.com
+Street: str1
+Street_Number: 1
+Town: town1
+ZipCode: 50601
+-------------------
+Name: Ashish
+Surname: Gatsy
+Mobile: 56
+Phone: 65
+Email: a@gmail.com
+Street: str2
+Street_Number: 2
+Town: town2
+ZipCode: 50602
+-------------------
+--------Welcome to Address Book---------
+Enter '1' to Add contact
+Enter '2' to Search contact
+Enter '3' to Print contact
+Enter '4' to Edit contact
+Enter '5' to Delete contact
+Enter '0' to Exit
+Do you want to print contacts, add contact, search for contact, edit contact, or delete contact?
+Answer with '1', '2', '3', '4', '5' or '0' to exit application.
 Application terminating...

@@ -45,7 +45,7 @@
 [INFO] Adding org.pitest:pitest to SUT classpath
 [INFO] Mutating from /home/ashish/IdeaProjects/Pungu/target/classes
 [INFO] Defaulting target classes to match packages in build directory
-/-\/-\|/-================================================================================
+/-\|/-\|/-================================================================================
 - Mutators
 ================================================================================
 > org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsMutator
@@ -55,26 +55,26 @@
 > NO_COVERAGE 2 
 --------------------------------------------------------------------------------
 > org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
->> Generated 25 Killed 0 (0%)
-> KILLED 0 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
-> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
-> NO_COVERAGE 25 
---------------------------------------------------------------------------------
-> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
->> Generated 187 Killed 10 (5%)
-> KILLED 10 SURVIVED 2 TIMED_OUT 0 NON_VIABLE 0 
-> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
-> NO_COVERAGE 175 
---------------------------------------------------------------------------------
-> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
->> Generated 169 Killed 1 (1%)
+>> Generated 25 Killed 1 (4%)
 > KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
 > MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
-> NO_COVERAGE 168 
+> NO_COVERAGE 24 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
+>> Generated 186 Killed 17 (9%)
+> KILLED 17 SURVIVED 3 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 166 
+--------------------------------------------------------------------------------
+> org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
+>> Generated 169 Killed 4 (2%)
+> KILLED 4 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+> MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
+> NO_COVERAGE 165 
 --------------------------------------------------------------------------------
 > org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnsMutator
->> Generated 1 Killed 0 (0%)
-> KILLED 0 SURVIVED 1 TIMED_OUT 0 NON_VIABLE 0 
+>> Generated 1 Killed 1 (100%)
+> KILLED 1 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
 > MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
 > NO_COVERAGE 0 
 --------------------------------------------------------------------------------
@@ -84,18 +84,18 @@
 > scan classpath : < 1 second
 > coverage and dependency analysis : < 1 second
 > build mutation tests : < 1 second
-> run mutation analysis : < 1 second
+> run mutation analysis : 1 seconds
 --------------------------------------------------------------------------------
-> Total  : 1 seconds
+> Total  : 2 seconds
 --------------------------------------------------------------------------------
 ================================================================================
 - Statistics
 ================================================================================
->> Generated 385 mutations Killed 12 (3%)
->> Ran 15 tests (0.04 tests per mutation)
+>> Generated 384 mutations Killed 24 (6%)
+>> Ran 30 tests (0.08 tests per mutation)
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.289 s
-[INFO] Finished at: 2023-11-25T01:31:44+05:30
+[INFO] Total time:  3.995 s
+[INFO] Finished at: 2023-11-25T16:50:17+05:30
 [INFO] ------------------------------------------------------------------------

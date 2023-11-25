@@ -5,8 +5,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 //import org.example.Main;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.io.ByteArrayInputStream;
@@ -17,39 +15,35 @@ import java.util.Random;
 import java.util.Scanner;
 
 import static org.junit.Assert.*;
-//import static org.junit.jupiter.api.Assertions.*;
-
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.BeforeEach;
 
 
 public class MainTest {
 
-//    private PrintStream originalSystemOut;
-//    private ByteArrayOutputStream outputStream;
-//    private static final String OUTPUT_FILE = "test_output.txt";
-//
-//
-//    void setfileUp() {
-//        // Save the original System.out
-//        originalSystemOut = System.out;
-//
-//        // Redirect System.out to a ByteArrayOutputStream
-//        outputStream = new ByteArrayOutputStream();
-//        System.setOut(new PrintStream(outputStream));
-//    }
-//
-//    void tearDown() {
-//        // Restore the original System.out after each test
-//        System.setOut(originalSystemOut);
-//
-//        // Save the captured output to a file
-//        try (FileWriter writer = new FileWriter(OUTPUT_FILE)) {
-//            writer.write(outputStream.toString());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    private PrintStream originalSystemOut;
+    private ByteArrayOutputStream outputStream;
+    private static final String OUTPUT_FILE = "test_output.txt";
+
+
+    void setfileUp() {
+        // Save the original System.out
+        originalSystemOut = System.out;
+
+        // Redirect System.out to a ByteArrayOutputStream
+        outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+    }
+
+    void tearDown() {
+        // Restore the original System.out after each test
+        System.setOut(originalSystemOut);
+
+        // Save the captured output to a file
+        try (FileWriter writer = new FileWriter(OUTPUT_FILE)) {
+            writer.write(outputStream.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @Test
     public void shouldAnswerWithTrue()
     {
@@ -102,6 +96,38 @@ public class MainTest {
         assertEquals(expectedMenu, actualOutput);
         // Add more assertions based on your application's behavior
     }
+    @Test
+    public void testPrintandExit() {
+        // Arrange
+        String searchInput = "3\n 0\n"; // Simulate searching for a user and then exiting
 
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "/home/ashish/IdeaProjects/Pungu/src/contacts.txt\n" +
+                "/home/ashish/IdeaProjects/Pungu/src\n" +
+                "true\n" +
+                "-------------------\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
 
 }
