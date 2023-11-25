@@ -43,9 +43,9 @@ public class Search {
 //        Scanner input= new Scanner(System.in);
         String f1,f2;
         System.out.println("Give Name: ");
-        f1 = input.nextLine();
+        f1 = getNextLine(input);
         System.out.println("Give Surname: ");
-        f2 = input.nextLine();
+        f2 = getNextLine(input);
         File file = new File(System.getProperty("user.dir")+"/src/contacts.txt");
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String currentLine;
@@ -83,7 +83,13 @@ public class Search {
         reader.close();
         choose_field(input);
     }
-
+    private static String getNextLine(Scanner scanner) {
+        String line = "";
+        while (line.isEmpty()) {
+            line = scanner.nextLine().trim();
+        }
+        return line;
+    }
     public static void number_search(Scanner input) throws IOException, FileNotFoundException{
 //        Scanner input= new Scanner(System.in);
         int f1 = -1;

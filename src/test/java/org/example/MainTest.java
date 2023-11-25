@@ -130,4 +130,39 @@ public class MainTest {
         assertTrue(actualstring.contains(expectedOutput));
     }
 
+    @Test
+    public void testSearchExistingandExit() {
+        // Arrange
+        String searchInput = "2\n1\nAshish\nGatsy\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Name: \n" +
+                "Give Surname: \n" +
+                "----There is a contact for the information you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+        setfileUp();
+        System.out.println(actualstring);
+        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
 }
