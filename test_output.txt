@@ -9,9 +9,9 @@ Do you want to print contacts, add contact, search for contact, edit contact, or
 Answer with '1', '2', '3', '4', '5' or '0' to exit application.
 Do you want to search beased on name or based on phone?
 Give '1' or '2' or anser '0' to return to main menu.
-Give Name: 
-Give Surname: 
-----There is a contact for the information you gave----
+Give Phone number: 
+Give mobile number: 
+----There is a contact for the Phone number you gave----
 Name: Ashish
 Surname: Gatsy
 Mobile: 56

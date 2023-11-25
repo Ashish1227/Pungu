@@ -159,9 +159,300 @@ public class MainTest {
                 "----There is a contact for the information you gave----\n" +
                 "Name:";
         String actualstring = outputStream.toString().trim();
-        setfileUp();
-        System.out.println(actualstring);
-        tearDown();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting1andExit() {
+        // Arrange
+        String searchInput = "2\n1\nAshish\nGatreddi\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Name: \n" +
+                "Give Surname: \n" +
+                "----There is a contact for the Name you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting2andExit() {
+        // Arrange
+        String searchInput = "2\n1\nAsh\nGatsy\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Name: \n" +
+                "Give Surname: \n" +
+                "----There is a contact for the Surname you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting3andExit() {
+        // Arrange
+        String searchInput = "2\n2\n56\n65\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give mobile number: \n" +
+                "----There is a contact for the Phone and Mobile number you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting4andExit() {
+        // Arrange
+        String searchInput = "2\n2\n56\n312\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give mobile number: \n" +
+                "----There is a contact for the Phone number you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting5andExit() {
+        // Arrange
+        String searchInput = "2\n2\n312\n65\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give mobile number: \n" +
+                "----There is a contact for the Phone number you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting6andExit() {
+        // Arrange
+        String searchInput = "2\n2\n-1\n-1\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give mobile number: \n" +
+                "-------------------\n" +
+                "You gave wrong information.\n" +
+                "-------------------";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting7andExit() {
+        // Arrange
+        String searchInput = "2\n2\n-1\n65\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give mobile number: \n" +
+                "----There is a contact for the Mobile number you gave----\n" +
+                "Name:";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
+        assertTrue(actualstring.contains(expectedOutput));
+    }
+
+    @Test
+    public void testSearchExisting8andExit() {
+        // Arrange
+        String searchInput = "2\n2\n56\n-1\n0\n0\n0\n"; // Simulate searching for a user and then exiting
+
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        // Assert
+        String expectedOutput = "Do you want to search beased on name or based on phone?\n" +
+                "Give '1' or '2' or anser '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give mobile number: \n" +
+                "----There is a contact for the Phone number you gave----\n" +
+                "Name: Ashish\n" +
+                "Surname: Gatsy\n" +
+                "Mobile: 56\n" +
+                "Phone: 65\n" +
+                "Email: a@gmail.com\n" +
+                "Street: str2\n" +
+                "Street_Number: 2\n" +
+                "Town: town2\n" +
+                "ZipCode: 50602\n" +
+                "-------------------\n" +
+                "Do you want to search beased on name or based on phone?";
+        String actualstring = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
         assertTrue(actualstring.contains(expectedOutput));
     }
 
