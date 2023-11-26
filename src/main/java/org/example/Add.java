@@ -15,29 +15,6 @@ import java.io.Writer;
 import java.util.Scanner;
 
 public class Add extends Main{
-    //    public static void add_contact() throws IOException, FileNotFoundException{
-//        File file1 = new File(System.getProperty("user.dir")+"/src/contacts.txt");// we get the file
-//        BufferedReader reader1 = new BufferedReader(new FileReader(file1)); // we get reader for the file
-//        OutputStreamWriter writer1 = new OutputStreamWriter(
-//                new FileOutputStream(System.getProperty("user.dir")+"/src/contacts.txt", true), "UTF-8");
-//        BufferedWriter writer = new BufferedWriter(writer1);//this is a way to get a writer for th specific file
-////        Scanner input= new Scanner(System.in);
-//        boolean duplicate, valid;
-//        String currentLine1;
-//        String f1 = "";//I initialize the variablesto avoid errors
-//        String f2 = "";
-//        String f5 = "";
-//        String f6 = "";
-//        String f8 = "";
-//        int f3 = -1;
-//        int f4 = -1;
-//        int f7 = -1;
-//        int f9 = -1;
-//        String str;
-//        System.out.println("Give Name: ");
-//        f1 = input.nextLine();
-//        System.out.println("Give Surname: ");
-//        f2 = input.nextLine();
     public static void add_contact(Scanner input) throws IOException, FileNotFoundException {
         File file1 = new File(System.getProperty("user.dir") + "/src/contacts.txt");
         BufferedReader reader1 = new BufferedReader(new FileReader(file1));
@@ -69,7 +46,7 @@ public class Add extends Main{
             System.out.println("Give Phone: ");
             //f3 = input.nextInt();
             try {
-                f3 = Integer.parseInt(input.nextLine());
+                f3 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 valid = false;
                 System.out.println("Phone must be number.");
@@ -90,7 +67,7 @@ public class Add extends Main{
             System.out.println("Give Mobile phone: ");
             //f4 = input.nextInt();
             try {
-                f4 = Integer.parseInt(input.nextLine());
+                f4 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 System.out.println("Mobile phone must be number.");
@@ -108,7 +85,7 @@ public class Add extends Main{
         do {
             duplicate = false;
             System.out.println("Give E-mail: ");
-            f5 = input.nextLine();
+            f5 = getNextLine(input);
             while((currentLine1 = reader1.readLine()) != null) {//check for duplicate
                 String[] words1=currentLine1.split(",");
                 if(words1[4].equals(f5)) {
@@ -119,13 +96,13 @@ public class Add extends Main{
             reader1 = new BufferedReader(new FileReader(file1));
         }while (duplicate == true);
         System.out.println("Give Street: ");
-        f6 = input.nextLine();
+        f6 = getNextLine(input);
         System.out.println("Give street number: ");
         //f7 = input.nextInt();
         do {
             valid = true;
             try {
-                f7 = Integer.parseInt(input.nextLine());
+                f7 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 System.out.println("Street number must be a number.");
@@ -133,13 +110,13 @@ public class Add extends Main{
             }
         }while(valid == false);
         System.out.println("Give town: ");
-        f8 = input.nextLine();
+        f8 = getNextLine(input);
         System.out.println("Give Zip code: ");
         //f9 = input.nextInt();
         do {
             valid = true;
             try {
-                f9 = Integer.parseInt(input.nextLine());
+                f9 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 System.out.println("Zip code must be a number.");
@@ -167,6 +144,5 @@ public class Add extends Main{
         }
         return line;
     }
-
 }
 

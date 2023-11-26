@@ -7,37 +7,26 @@ Enter '5' to Delete contact
 Enter '0' to Exit
 Do you want to print contacts, add contact, search for contact, edit contact, or delete contact?
 Answer with '1', '2', '3', '4', '5' or '0' to exit application.
-Do you want to edit a contact based on the name or Phone number?
-Give '1', '2' or '0' to return to main menu.
+Do you want to delete a contact based on the name or the phone number?
+Give '1', '2' or '0' to go back to main menu.
 Give Phone number: 
 Give Mobile number: 
 ----There is a contact for the information you gave----
-Name: Tempb
-Surname: Tsurb
-Mobile: 888
-Phone: 999
-Email: tempa@gmail.com
-Street: tastreet
-Street_Number: 2023
-Town: tempatown
-ZipCode: 20023
+Name: Testname
+Surname: Testsurname
+Mobile: 323
+Phone: 232
+Email: test@email.com
+Street: anotherstreet
+Street_Number: 454
+Town: anothertown
+ZipCode: 545
+Information was valid, deletion completed successfully
 -------------------
-----Edit Information----
-Change the information Name: Tempb, to:
-Change the information Surname: Tsurb, to:
-Change the information Mobile: 888, to:
-Change the information Phone: 999, to:
-Change the information Email: tempa@gmail.com, to:
-Change the information Street: tastreet, to:
-Change the information Street_Number: 2023, to:
-Change the information Town: tempatown, to:
-Change the information ZipCode: 20023, to:
-E-mail must be unique among the contacts.
-Contact change did not complete.
-Do you want to edit a contact based on the name or Phone number?
-Give '1', '2' or '0' to return to main menu.
-Do you want to edit a contact based on the name or Phone number?
-Give '1', '2' or '0' to return to main menu.
+Do you want to delete a contact based on the name or the phone number?
+Give '1', '2' or '0' to go back to main menu.
+Do you want to delete a contact based on the name or the phone number?
+Give '1', '2' or '0' to go back to main menu.
 --------Welcome to Address Book---------
 Enter '1' to Add contact
 Enter '2' to Search contact

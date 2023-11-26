@@ -943,9 +943,90 @@ public class MainTest {
         String acrtualoutput = outputStream.toString().trim();
         String acrtualoutput1 = outputStream1.toString().trim();
         String acrtualoutput2 = outputStream2.toString().trim();
-        setfileUp();
-        System.out.println(acrtualoutput2);
-        tearDown();
+//        setfileUp();
+//        System.out.println(acrtualoutput2);
+//        tearDown();
         assertTrue(acrtualoutput.contains(expectedoutput) && acrtualoutput1.contains(expectedoutput1) && acrtualoutput2.contains(expectedoutput2));
+    }
+
+    @Test
+    public void testAddDeleteValidExit()
+    {
+        String searchInput = "1\n Testname\n Testsurname\n 323\n 232\n test@email.com\n anotherstreet\n 454\n anothertown\n 545\n 0\n 0\n 0\n";
+        String searchInput1 = "5\n 2\n 323\n 232\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        InputStream originalSystemIn1 = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput1.getBytes()));
+
+        ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream1));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn1);
+        }
+
+        String expectedoutput = "Give Name: \n" +
+                "Give Surname: \n" +
+                "Give Phone: \n" +
+                "Give Mobile phone: \n" +
+                "Give E-mail: \n" +
+                "Give Street: \n" +
+                "Give street number: \n" +
+                "Give town: \n" +
+                "Give Zip code: \n" +
+                "--------Welcome to Address Book---------\n" +
+                "Enter '1' to Add contact\n" +
+                "Enter '2' to Search contact\n" +
+                "Enter '3' to Print contact\n" +
+                "Enter '4' to Edit contact\n" +
+                "Enter '5' to Delete contact\n" +
+                "Enter '0' to Exit\n" +
+                "Do you want to print contacts, add contact, search for contact, edit contact, or delete contact?\n" +
+                "Answer with '1', '2', '3', '4', '5' or '0' to exit application.\n" +
+                "Application terminating...";
+        String expectedoutput1 = "Do you want to delete a contact based on the name or the phone number?\n" +
+                "Give '1', '2' or '0' to go back to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give Mobile number: \n" +
+                "----There is a contact for the information you gave----\n" +
+                "Name: Testname\n" +
+                "Surname: Testsurname\n" +
+                "Mobile: 323\n" +
+                "Phone: 232\n" +
+                "Email: test@email.com\n" +
+                "Street: anotherstreet\n" +
+                "Street_Number: 454\n" +
+                "Town: anothertown\n" +
+                "ZipCode: 545\n" +
+                "Information was valid, deletion completed successfully\n" +
+                "-------------------\n" +
+                "Do you want to delete a contact based on the name or the phone number?";
+        String actualoutput = outputStream.toString().trim();
+        String actualoutput1 = outputStream1.toString().trim();
+        setfileUp();
+        System.out.println(actualoutput1);
+        tearDown();
+        assertTrue(actualoutput.contains(expectedoutput) && actualoutput1.contains(expectedoutput1));
     }
 }

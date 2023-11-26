@@ -35,11 +35,9 @@ public class Delete {
 //        Scanner input= new Scanner(System.in);
         String f1,f2;
         System.out.println("Give Name: ");
-        f1 = input.nextLine();
-//        f1 = getNextLine(input);
+        f1 = getNextLine(input);
         System.out.println("Give Surname: ");
-        f2 = input.nextLine();
-//        f2 = getNextLine(input);
+        f2 = getNextLine(input);
         File file = new File(System.getProperty("user.dir")+"/src/contacts.txt");
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String currentLine;
@@ -85,13 +83,6 @@ public class Delete {
         }
         choose_field(input);
     }
-    private static String getNextLine(Scanner scanner) {
-        String line = "";
-        while (line.isEmpty()) {
-            line = scanner.nextLine().trim();
-        }
-        return line;
-    }
     public static void number_search(Scanner input) throws IOException, FileNotFoundException{
 //        Scanner input= new Scanner(System.in);
         int f1 = -1;
@@ -101,7 +92,7 @@ public class Delete {
         do {
             valid = true;
             try {
-                f1 = Integer.parseInt(input.nextLine());
+                f1 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 valid = false;
@@ -111,7 +102,7 @@ public class Delete {
         do {
             valid = true;
             try {
-                f2 = Integer.parseInt(input.nextLine());
+                f2 = Integer.parseInt(getNextLine(input));
             } catch (NumberFormatException e) {
                 //e.printStackTrace();
                 valid = false;
@@ -208,6 +199,11 @@ public class Delete {
         file2.renameTo(file1);//we rename the temporary file to the original file's name
         System.out.println("Information was valid, deletion completed successfully");
     }
-
-
+    private static String getNextLine(Scanner scanner) {
+        String line = "";
+        while (line.isEmpty()) {
+            line = scanner.nextLine().trim();
+        }
+        return line;
+    }
 }
