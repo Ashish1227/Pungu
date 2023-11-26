@@ -45,7 +45,7 @@
 [INFO] Adding org.pitest:pitest to SUT classpath
 [INFO] Mutating from /home/ashish/IdeaProjects/Pungu/target/classes
 [INFO] Defaulting target classes to match packages in build directory
-/-\|/-\|/-\|/-/-\|/-================================================================================
+/-\|/-\|/-\|/-\|/-\|/-/-\|/-================================================================================
 - Mutators
 ================================================================================
 > org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsMutator
@@ -55,22 +55,22 @@
 > NO_COVERAGE 2 
 --------------------------------------------------------------------------------
 > org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator
->> Generated 25 Killed 10 (40%)
-> KILLED 10 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+>> Generated 25 Killed 17 (68%)
+> KILLED 17 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
 > MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
-> NO_COVERAGE 15 
+> NO_COVERAGE 8 
 --------------------------------------------------------------------------------
 > org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator
->> Generated 186 Killed 82 (44%)
-> KILLED 82 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
+>> Generated 186 Killed 116 (62%)
+> KILLED 116 SURVIVED 0 TIMED_OUT 0 NON_VIABLE 0 
 > MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
-> NO_COVERAGE 104 
+> NO_COVERAGE 70 
 --------------------------------------------------------------------------------
 > org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator
->> Generated 171 Killed 77 (45%)
-> KILLED 75 SURVIVED 0 TIMED_OUT 2 NON_VIABLE 0 
+>> Generated 171 Killed 105 (61%)
+> KILLED 102 SURVIVED 0 TIMED_OUT 3 NON_VIABLE 0 
 > MEMORY_ERROR 0 NOT_STARTED 0 STARTED 0 RUN_ERROR 0 
-> NO_COVERAGE 94 
+> NO_COVERAGE 66 
 --------------------------------------------------------------------------------
 > org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnsMutator
 >> Generated 1 Killed 1 (100%)
@@ -84,18 +84,18 @@
 > scan classpath : < 1 second
 > coverage and dependency analysis : < 1 second
 > build mutation tests : < 1 second
-> run mutation analysis : 10 seconds
+> run mutation analysis : 14 seconds
 --------------------------------------------------------------------------------
-> Total  : 11 seconds
+> Total  : 15 seconds
 --------------------------------------------------------------------------------
 ================================================================================
 - Statistics
 ================================================================================
->> Generated 388 mutations Killed 173 (45%)
->> Ran 177 tests (0.46 tests per mutation)
+>> Generated 388 mutations Killed 242 (62%)
+>> Ran 253 tests (0.65 tests per mutation)
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  13.197 s
-[INFO] Finished at: 2023-11-25T19:29:56+05:30
+[INFO] Total time:  16.934 s
+[INFO] Finished at: 2023-11-26T11:15:09+05:30
 [INFO] ------------------------------------------------------------------------

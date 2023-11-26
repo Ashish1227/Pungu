@@ -556,9 +556,396 @@ public class MainTest {
                 "Give '1', '2' or '0' to return to main menu.";
         String actualstring = outputStream.toString().trim();
         String actualstring1 = outputStream1.toString().trim();
-        setfileUp();
-        System.out.println(actualstring);
-        tearDown();
+//        setfileUp();
+//        System.out.println(actualstring);
+//        tearDown();
         assertTrue(actualstring.contains(expectedOutput) && actualstring1.contains(expectedOutput1));
+    }
+
+    @Test
+    public void testChange2Exit()
+    {
+        String searchInput = "4\n 1\n Tempb\n kakjbafw\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String expectedoutput = "Do you want to edit a contact based on the name or Phone number?\n" +
+                "Give '1', '2' or '0' to return to main menu.\n" +
+                "Give Name: \n" +
+                "Give Surname: \n" +
+                "----There is a contact for the Name you gave----\n" +
+                "Name: Tempb\n" +
+                "Surname: Tsurb\n" +
+                "Mobile: 888\n" +
+                "Phone: 999\n" +
+                "Email: tempa@gmail.com\n" +
+                "Street: tastreet\n" +
+                "Street_Number: 2023\n" +
+                "Town: tempatown\n" +
+                "ZipCode: 20023\n" +
+                "----Name ans Surname must be valid----\n" +
+                "-------------------";
+        String acrtualoutput = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(acrtualoutput);
+//        tearDown();
+        assertTrue(acrtualoutput.contains(expectedoutput));
+    }
+
+    @Test
+    public void testChange3Exit()
+    {
+        String searchInput = "4\n 1\n adjbsfw\n Tsurb\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String expectedoutput = "Do you want to edit a contact based on the name or Phone number?\n" +
+                "Give '1', '2' or '0' to return to main menu.\n" +
+                "Give Name: \n" +
+                "Give Surname: \n" +
+                "----There is a contact for the Surname you gave----\n" +
+                "Name: Tempb\n" +
+                "Surname: Tsurb\n" +
+                "Mobile: 888\n" +
+                "Phone: 999\n" +
+                "Email: tempa@gmail.com\n" +
+                "Street: tastreet\n" +
+                "Street_Number: 2023\n" +
+                "Town: tempatown\n" +
+                "ZipCode: 20023\n" +
+                "----Name ans Surname must be valid----\n" +
+                "-------------------";
+        String acrtualoutput = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(acrtualoutput);
+//        tearDown();
+        assertTrue(acrtualoutput.contains(expectedoutput));
+    }
+
+    @Test
+    public void testChange4Exit()
+    {
+        String searchInput = "4\n 2\n -1\n -1\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String expectedoutput = "Do you want to edit a contact based on the name or Phone number?\n" +
+                "Give '1', '2' or '0' to return to main menu.\n" +
+                "Give Phone number: \n" +
+                "Give Mobile number: \n" +
+                "-------------------\n" +
+                "You gave wrong information.\n" +
+                "-------------------";
+        String acrtualoutput = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(acrtualoutput);
+//        tearDown();
+        assertTrue(acrtualoutput.contains(expectedoutput));
+    }
+
+    @Test
+    public void testChange5Exit()
+    {
+        String searchInput = "4\n 2\n -1\n 999\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String searchInput1 = "4\n 2\n 888\n -1\n 0\n 0\n 0\n";
+        InputStream originalSystemIn1 = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput1.getBytes()));
+
+        ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream1));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn1);
+        }
+
+        String expectedoutput =
+                "----There is a contact for the Mobile number you gave----\n" +
+                "Name: Tempb\n" +
+                "Surname: Tsurb\n" +
+                "Mobile: 888\n" +
+                "Phone: 999\n" +
+                "Email: tempa@gmail.com\n" +
+                "Street: tastreet\n" +
+                "Street_Number: 2023\n" +
+                "Town: tempatown\n" +
+                "ZipCode: 20023\n" +
+                "----Phone and Mobile numbers must be valid----\n" +
+                "-------------------";
+        String expectedoutput1 =
+                "----There is a contact for the Phone number you gave----\n" +
+                "Name: Tempb\n" +
+                "Surname: Tsurb\n" +
+                "Mobile: 888\n" +
+                "Phone: 999\n" +
+                "Email: tempa@gmail.com\n" +
+                "Street: tastreet\n" +
+                "Street_Number: 2023\n" +
+                "Town: tempatown\n" +
+                "ZipCode: 20023\n" +
+                "----Phone and Mobile numbers must be valid----\n" +
+                "-------------------";
+        String actualoutput = outputStream.toString().trim();
+        String actualoutput1 = outputStream1.toString().trim();
+//        setfileUp();
+//        System.out.println(actualoutput1);
+//        tearDown();
+        assertTrue(actualoutput.contains(expectedoutput) && actualoutput1.contains(expectedoutput1));
+    }
+
+    @Test
+    public void testChange6Exit()
+    {
+        String searchInput = "4\n 2\n 123\n 999\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String searchInput1 = "4\n 2\n 888\n 123\n 0\n 0\n 0\n";
+        InputStream originalSystemIn1 = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput1.getBytes()));
+
+        ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream1));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn1);
+        }
+
+        String expectedoutput =
+                "----There is a contact for the Mobile number you gave----\n" +
+                "Name: Tempb\n" +
+                "Surname: Tsurb\n" +
+                "Mobile: 888\n" +
+                "Phone: 999\n" +
+                "Email: tempa@gmail.com\n" +
+                "Street: tastreet\n" +
+                "Street_Number: 2023\n" +
+                "Town: tempatown\n" +
+                "ZipCode: 20023\n" +
+                "----Phone and Mobile numbers must be valid----\n" +
+                "-------------------";
+        String expectedoutput1 =
+                "----There is a contact for the Phone number you gave----\n" +
+                "Name: Tempb\n" +
+                "Surname: Tsurb\n" +
+                "Mobile: 888\n" +
+                "Phone: 999\n" +
+                "Email: tempa@gmail.com\n" +
+                "Street: tastreet\n" +
+                "Street_Number: 2023\n" +
+                "Town: tempatown\n" +
+                "ZipCode: 20023\n" +
+                "----Phone and Mobile numbers must be valid----\n" +
+                "-------------------";
+        String actualoutput = outputStream.toString().trim();
+        String actualoutput1 = outputStream1.toString().trim();
+//        setfileUp();
+//        System.out.println(actualoutput1);
+//        tearDown();
+        assertTrue(actualoutput.contains(expectedoutput) && actualoutput1.contains(expectedoutput1));
+    }
+
+    @Test
+    public void testChange7Exit()
+    {
+        String searchInput = "4\n 2\n 888\n 999\n akdbqa\n adbqaiu\n -1\n -1\n aoud\n akjbda\n -1\n somewwd\n -1\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String expectedoutput = "You gave wrong information, information change wasn't successful.";
+        String acrtualoutput = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(acrtualoutput);
+//        tearDown();
+        assertTrue(acrtualoutput.contains(expectedoutput));
+    }
+
+    @Test
+    public void testChange8Exit()
+    {
+        String searchInput = "4\n 2\n 888\n 999\n akdbqa\n adbqaiu\n -1\n -1\n aoud\n akjbda\n -1\n somewwd\n -1\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        String expectedoutput = "You gave wrong information, information change wasn't successful.";
+        String acrtualoutput = outputStream.toString().trim();
+//        setfileUp();
+//        System.out.println(acrtualoutput);
+//        tearDown();
+        assertTrue(acrtualoutput.contains(expectedoutput));
+    }
+
+    @Test
+    public void testChange9Exit()
+    {
+        String searchInput = "4\n 2\n 888\n 999\n akdbqa\n adbqaiu\n 56\n 999\n aoud\n akjbda\n 2023\n somewwd\n 20023\n 0\n 0\n 0\n";
+        String searchInput1 = "4\n 2\n 888\n 999\n akdbqa\n adbqaiu\n 888\n 65\n aoud\n akjbda\n 2023\n somewwd\n 20023\n 0\n 0\n 0\n";
+        String searchInput2 = "4\n 2\n 888\n 999\n akdbqa\n adbqaiu\n 888\n 999\n a@gmail.com\n akjbda\n 2023\n somewwd\n 20023\n 0\n 0\n 0\n";
+        InputStream originalSystemIn = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput.getBytes()));
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn);
+        }
+
+        InputStream originalSystemIn1 = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput1.getBytes()));
+
+        ByteArrayOutputStream outputStream1 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream1));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn1);
+        }
+
+        InputStream originalSystemIn2 = System.in; // Store the original System.in
+        System.setIn(new ByteArrayInputStream(searchInput2.getBytes()));
+
+        ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream2));
+
+        // Act
+        try (Scanner scanner = new Scanner(System.in)) {
+            Main.main(new String[]{});
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            // Restore the original System.in after the test
+            System.setIn(originalSystemIn2);
+        }
+
+        String expectedoutput = "Mobile number must be unique among the contacts.\n" +
+                "Contact change did not complete.";
+        String expectedoutput1 = "Phone number must be unique among the contacts.\n" +
+                "Contact change did not complete.";
+        String expectedoutput2 = "E-mail must be unique among the contacts.\n" +
+                "Contact change did not complete.";
+        String acrtualoutput = outputStream.toString().trim();
+        String acrtualoutput1 = outputStream1.toString().trim();
+        String acrtualoutput2 = outputStream2.toString().trim();
+        setfileUp();
+        System.out.println(acrtualoutput2);
+        tearDown();
+        assertTrue(acrtualoutput.contains(expectedoutput) && acrtualoutput1.contains(expectedoutput1) && acrtualoutput2.contains(expectedoutput2));
     }
 }

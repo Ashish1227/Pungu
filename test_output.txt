@@ -9,8 +9,8 @@ Do you want to print contacts, add contact, search for contact, edit contact, or
 Answer with '1', '2', '3', '4', '5' or '0' to exit application.
 Do you want to edit a contact based on the name or Phone number?
 Give '1', '2' or '0' to return to main menu.
-Give Name: 
-Give Surname: 
+Give Phone number: 
+Give Mobile number: 
 ----There is a contact for the information you gave----
 Name: Tempb
 Surname: Tsurb
@@ -32,7 +32,8 @@ Change the information Street: tastreet, to:
 Change the information Street_Number: 2023, to:
 Change the information Town: tempatown, to:
 Change the information ZipCode: 20023, to:
-Contact change is completed.
+E-mail must be unique among the contacts.
+Contact change did not complete.
 Do you want to edit a contact based on the name or Phone number?
 Give '1', '2' or '0' to return to main menu.
 Do you want to edit a contact based on the name or Phone number?
